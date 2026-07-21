@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — KPI Matrix Grid by Baztec</title>
+<style>
+  :root {
+    --ink: #1c2126;
+    --ink-soft: #4b545c;
+    --line: #dde2e6;
+    --bg: #fafbfc;
+    --card: #ffffff;
+    --accent: #2f6f4f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+  .eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 30px;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+  .sub {
+    color: var(--ink-soft);
+    font-size: 16px;
+    margin: 0 0 40px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+  }
+  .card h2 {
+    font-size: 15px;
+    margin: 0 0 8px;
+    color: var(--ink);
+  }
+  .card p {
+    margin: 0 0 12px;
+    color: var(--ink-soft);
+    font-size: 15px;
+  }
+  .card p:last-child { margin-bottom: 0; }
+  a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  a:hover { border-bottom-color: var(--accent); }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 520px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+  footer {
+    margin-top: 48px;
+    font-size: 13px;
+    color: #8a939b;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="eyebrow">Baztec</div>
+    <h1>KPI Matrix Grid — Support</h1>
+    <p class="sub">Get help using the KPI Matrix Grid Power BI visual, report a bug, or request a feature.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Report an issue</h2>
+        <p>Bugs, unexpected behaviour, or anything that doesn't match the documentation.</p>
+        <a href="https://github.com/bazallarrr/PBI_kpi-matrix-grid_chart/issues" target="_blank" rel="noopener">Open a GitHub issue →</a>
+      </div>
+      <div class="card">
+        <h2>Email support</h2>
+        <p>For direct questions, setup help, or anything you'd rather not post publicly.</p>
+        <a href="mailto:barry.hewett+PBI@gmail.com">barry.hewett+PBI@gmail.com</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Before you reach out</h2>
+      <p>Include your Power BI Desktop version, the visual's version number (shown in the format pane under "About"), and — if possible — a screenshot or short description of what you expected versus what happened. This helps get you an answer faster.</p>
+    </div>
+
+    <footer>KPI Matrix Grid by Baztec · Power BI custom visual</footer>
+  </div>
+</body>
+</html>
