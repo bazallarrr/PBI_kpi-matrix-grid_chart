@@ -1,0 +1,5089 @@
+{
+    "dataRoles": [
+        {
+            "displayName": "Site Name",
+            "name": "siteName",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "(Well 1) Period Name",
+            "name": "period",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "(Well 2) Monthly Actuals",
+            "name": "actualValues",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "(Well 3) Monthly Goals",
+            "name": "goalValues",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "(Well 4) Monthly Conditional Formatting",
+            "name": "cfValues",
+            "kind": "Measure"
+        }
+    ],
+    "dataViewMappings": [
+        {
+            "conditions": [
+                {
+                    "siteName": {
+                        "max": 1
+                    },
+                    "period": {
+                        "max": 1
+                    },
+                    "actualValues": {
+                        "max": 30
+                    },
+                    "goalValues": {
+                        "max": 30
+                    },
+                    "cfValues": {
+                        "max": 30
+                    }
+                }
+            ],
+            "categorical": {
+                "categories": {
+                    "select": [
+                        {
+                            "bind": {
+                                "to": "period"
+                            }
+                        }
+                    ],
+                    "dataReductionAlgorithm": {
+                        "top": {
+                            "count": 12
+                        }
+                    }
+                },
+                "values": {
+                    "select": [
+                        {
+                            "bind": {
+                                "to": "siteName"
+                            }
+                        },
+                        {
+                            "bind": {
+                                "to": "actualValues"
+                            }
+                        },
+                        {
+                            "bind": {
+                                "to": "goalValues"
+                            }
+                        },
+                        {
+                            "bind": {
+                                "to": "cfValues"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "privileges": [],
+    "sorting": {
+        "default": {}
+    },
+    "objects": {
+        "layout": {
+            "displayName": "Layout",
+            "properties": {
+                "rowPaddingV": {
+                    "displayName": "Row padding - vertical (px)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "rowPaddingH": {
+                    "displayName": "Row padding - horizontal (px)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "showKpiNumbers": {
+                    "displayName": "Developer: show KPI numbers",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "showSummaryColumn": {
+                    "displayName": "Show summary column",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "alternateRowShading": {
+                    "displayName": "Alternate row shading",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "showFutureMonths": {
+                    "displayName": "Show future months",
+                    "type": {
+                        "bool": true
+                    }
+                }
+            }
+        },
+        "hoverPopup": {
+            "displayName": "Hover popup",
+            "properties": {
+                "fontSize": {
+                    "displayName": "Font size",
+                    "type": {
+                        "numeric": true
+                    }
+                }
+            }
+        },
+        "monthlyValues": {
+            "displayName": "Monthly values",
+            "properties": {
+                "fontSize": {
+                    "displayName": "Font size",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "bold": {
+                    "displayName": "Bold",
+                    "type": {
+                        "bool": true
+                    }
+                }
+            }
+        },
+        "kpiRowHeaders": {
+            "displayName": "KPI row headers",
+            "properties": {
+                "fontSize": {
+                    "displayName": "Font size",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "fontFamily": {
+                    "displayName": "Font family",
+                    "type": {
+                        "formatting": {
+                            "fontFamily": true
+                        }
+                    }
+                },
+                "bold": {
+                    "displayName": "Bold",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "color": {
+                    "displayName": "Text color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "wrapText": {
+                    "displayName": "Wrap text",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "alignment": {
+                    "displayName": "Alignment",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "left",
+                                "displayName": "Left"
+                            },
+                            {
+                                "value": "center",
+                                "displayName": "Center"
+                            },
+                            {
+                                "value": "right",
+                                "displayName": "Right"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "columnHeaders": {
+            "displayName": "Column headers",
+            "properties": {
+                "fontSize": {
+                    "displayName": "Font size",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "fontFamily": {
+                    "displayName": "Font family",
+                    "type": {
+                        "formatting": {
+                            "fontFamily": true
+                        }
+                    }
+                },
+                "bold": {
+                    "displayName": "Bold",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "color": {
+                    "displayName": "Text color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "background": {
+                    "displayName": "Background",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "alignment": {
+                    "displayName": "Alignment",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "left",
+                                "displayName": "Left"
+                            },
+                            {
+                                "value": "center",
+                                "displayName": "Center"
+                            },
+                            {
+                                "value": "right",
+                                "displayName": "Right"
+                            }
+                        ]
+                    }
+                },
+                "siteNameFontSize": {
+                    "displayName": "Site Name font size",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "siteNameBold": {
+                    "displayName": "Site Name bold",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "siteNameColor": {
+                    "displayName": "Site Name text color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "siteNameAlignment": {
+                    "displayName": "Site Name alignment",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "left",
+                                "displayName": "Left"
+                            },
+                            {
+                                "value": "center",
+                                "displayName": "Center"
+                            },
+                            {
+                                "value": "right",
+                                "displayName": "Right"
+                            }
+                        ]
+                    }
+                },
+                "siteNameBackground": {
+                    "displayName": "Site Name cell background (default: no colour)",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "summaryColumn": {
+            "displayName": "Summary column — global settings",
+            "properties": {
+                "headerLabel": {
+                    "displayName": "Header label",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "headerBold": {
+                    "displayName": "Header bold",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "showGoalDeltaColumn": {
+                    "displayName": "Show Goal/Delta column",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "valueFontSize": {
+                    "displayName": "Value font size",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "goalDeltaFontSize": {
+                    "displayName": "Goal/Delta font size (also used for NA)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "goalDeltaLayout": {
+                    "displayName": "Goal/Delta layout",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "stacked",
+                                "displayName": "Two lines (Goal above Delta)"
+                            },
+                            {
+                                "value": "oneLine",
+                                "displayName": "One line (Goal + Delta)"
+                            }
+                        ]
+                    }
+                },
+                "tagPosition": {
+                    "displayName": "Tag position",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "stacked",
+                                "displayName": "Above value"
+                            },
+                            {
+                                "value": "right",
+                                "displayName": "Right of value (own column)"
+                            }
+                        ]
+                    }
+                },
+                "tagFontSize": {
+                    "displayName": "Tag font size",
+                    "type": {
+                        "numeric": true
+                    }
+                }
+            }
+        },
+        "rowLevelControl": {
+            "displayName": "Row Level Control",
+            "properties": {
+                "kpi1decimalsMode": {
+                    "displayName": "KPI 1 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi1decimalsMonthly": {
+                    "displayName": "KPI 1 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi1decimalsSummary": {
+                    "displayName": "KPI 1 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi1noGoal": {
+                    "displayName": "KPI 1 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi1showGoal": {
+                    "displayName": "KPI 1 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi1showActual": {
+                    "displayName": "KPI 1 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi1showDelta": {
+                    "displayName": "KPI 1 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi1summaryTag": {
+                    "displayName": "KPI 1 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi1valueUnit": {
+                    "displayName": "KPI 1 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi1popupPolarity": {
+                    "displayName": "KPI 1 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi1summaryMode": {
+                    "displayName": "KPI 1 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi1disableCF": {
+                    "displayName": "KPI 1 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi1showChart": {
+                    "displayName": "KPI 1 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi2decimalsMode": {
+                    "displayName": "KPI 2 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi2decimalsMonthly": {
+                    "displayName": "KPI 2 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi2decimalsSummary": {
+                    "displayName": "KPI 2 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi2noGoal": {
+                    "displayName": "KPI 2 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi2showGoal": {
+                    "displayName": "KPI 2 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi2showActual": {
+                    "displayName": "KPI 2 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi2showDelta": {
+                    "displayName": "KPI 2 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi2summaryTag": {
+                    "displayName": "KPI 2 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi2valueUnit": {
+                    "displayName": "KPI 2 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi2popupPolarity": {
+                    "displayName": "KPI 2 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi2summaryMode": {
+                    "displayName": "KPI 2 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi2disableCF": {
+                    "displayName": "KPI 2 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi2showChart": {
+                    "displayName": "KPI 2 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi3decimalsMode": {
+                    "displayName": "KPI 3 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi3decimalsMonthly": {
+                    "displayName": "KPI 3 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi3decimalsSummary": {
+                    "displayName": "KPI 3 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi3noGoal": {
+                    "displayName": "KPI 3 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi3showGoal": {
+                    "displayName": "KPI 3 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi3showActual": {
+                    "displayName": "KPI 3 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi3showDelta": {
+                    "displayName": "KPI 3 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi3summaryTag": {
+                    "displayName": "KPI 3 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi3valueUnit": {
+                    "displayName": "KPI 3 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi3popupPolarity": {
+                    "displayName": "KPI 3 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi3summaryMode": {
+                    "displayName": "KPI 3 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi3disableCF": {
+                    "displayName": "KPI 3 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi3showChart": {
+                    "displayName": "KPI 3 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi4decimalsMode": {
+                    "displayName": "KPI 4 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi4decimalsMonthly": {
+                    "displayName": "KPI 4 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi4decimalsSummary": {
+                    "displayName": "KPI 4 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi4noGoal": {
+                    "displayName": "KPI 4 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi4showGoal": {
+                    "displayName": "KPI 4 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi4showActual": {
+                    "displayName": "KPI 4 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi4showDelta": {
+                    "displayName": "KPI 4 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi4summaryTag": {
+                    "displayName": "KPI 4 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi4valueUnit": {
+                    "displayName": "KPI 4 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi4popupPolarity": {
+                    "displayName": "KPI 4 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi4summaryMode": {
+                    "displayName": "KPI 4 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi4disableCF": {
+                    "displayName": "KPI 4 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi4showChart": {
+                    "displayName": "KPI 4 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi5decimalsMode": {
+                    "displayName": "KPI 5 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi5decimalsMonthly": {
+                    "displayName": "KPI 5 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi5decimalsSummary": {
+                    "displayName": "KPI 5 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi5noGoal": {
+                    "displayName": "KPI 5 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi5showGoal": {
+                    "displayName": "KPI 5 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi5showActual": {
+                    "displayName": "KPI 5 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi5showDelta": {
+                    "displayName": "KPI 5 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi5summaryTag": {
+                    "displayName": "KPI 5 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi5valueUnit": {
+                    "displayName": "KPI 5 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi5popupPolarity": {
+                    "displayName": "KPI 5 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi5summaryMode": {
+                    "displayName": "KPI 5 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi5disableCF": {
+                    "displayName": "KPI 5 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi5showChart": {
+                    "displayName": "KPI 5 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi6decimalsMode": {
+                    "displayName": "KPI 6 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi6decimalsMonthly": {
+                    "displayName": "KPI 6 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi6decimalsSummary": {
+                    "displayName": "KPI 6 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi6noGoal": {
+                    "displayName": "KPI 6 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi6showGoal": {
+                    "displayName": "KPI 6 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi6showActual": {
+                    "displayName": "KPI 6 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi6showDelta": {
+                    "displayName": "KPI 6 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi6summaryTag": {
+                    "displayName": "KPI 6 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi6valueUnit": {
+                    "displayName": "KPI 6 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi6popupPolarity": {
+                    "displayName": "KPI 6 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi6summaryMode": {
+                    "displayName": "KPI 6 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi6disableCF": {
+                    "displayName": "KPI 6 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi6showChart": {
+                    "displayName": "KPI 6 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi7decimalsMode": {
+                    "displayName": "KPI 7 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi7decimalsMonthly": {
+                    "displayName": "KPI 7 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi7decimalsSummary": {
+                    "displayName": "KPI 7 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi7noGoal": {
+                    "displayName": "KPI 7 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi7showGoal": {
+                    "displayName": "KPI 7 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi7showActual": {
+                    "displayName": "KPI 7 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi7showDelta": {
+                    "displayName": "KPI 7 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi7summaryTag": {
+                    "displayName": "KPI 7 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi7valueUnit": {
+                    "displayName": "KPI 7 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi7popupPolarity": {
+                    "displayName": "KPI 7 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi7summaryMode": {
+                    "displayName": "KPI 7 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi7disableCF": {
+                    "displayName": "KPI 7 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi7showChart": {
+                    "displayName": "KPI 7 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi8decimalsMode": {
+                    "displayName": "KPI 8 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi8decimalsMonthly": {
+                    "displayName": "KPI 8 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi8decimalsSummary": {
+                    "displayName": "KPI 8 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi8noGoal": {
+                    "displayName": "KPI 8 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi8showGoal": {
+                    "displayName": "KPI 8 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi8showActual": {
+                    "displayName": "KPI 8 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi8showDelta": {
+                    "displayName": "KPI 8 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi8summaryTag": {
+                    "displayName": "KPI 8 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi8valueUnit": {
+                    "displayName": "KPI 8 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi8popupPolarity": {
+                    "displayName": "KPI 8 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi8summaryMode": {
+                    "displayName": "KPI 8 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi8disableCF": {
+                    "displayName": "KPI 8 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi8showChart": {
+                    "displayName": "KPI 8 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi9decimalsMode": {
+                    "displayName": "KPI 9 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi9decimalsMonthly": {
+                    "displayName": "KPI 9 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi9decimalsSummary": {
+                    "displayName": "KPI 9 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi9noGoal": {
+                    "displayName": "KPI 9 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi9showGoal": {
+                    "displayName": "KPI 9 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi9showActual": {
+                    "displayName": "KPI 9 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi9showDelta": {
+                    "displayName": "KPI 9 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi9summaryTag": {
+                    "displayName": "KPI 9 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi9valueUnit": {
+                    "displayName": "KPI 9 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi9popupPolarity": {
+                    "displayName": "KPI 9 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi9summaryMode": {
+                    "displayName": "KPI 9 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi9disableCF": {
+                    "displayName": "KPI 9 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi9showChart": {
+                    "displayName": "KPI 9 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi10decimalsMode": {
+                    "displayName": "KPI 10 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi10decimalsMonthly": {
+                    "displayName": "KPI 10 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi10decimalsSummary": {
+                    "displayName": "KPI 10 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi10noGoal": {
+                    "displayName": "KPI 10 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi10showGoal": {
+                    "displayName": "KPI 10 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi10showActual": {
+                    "displayName": "KPI 10 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi10showDelta": {
+                    "displayName": "KPI 10 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi10summaryTag": {
+                    "displayName": "KPI 10 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi10valueUnit": {
+                    "displayName": "KPI 10 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi10popupPolarity": {
+                    "displayName": "KPI 10 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi10summaryMode": {
+                    "displayName": "KPI 10 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi10disableCF": {
+                    "displayName": "KPI 10 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi10showChart": {
+                    "displayName": "KPI 10 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi11decimalsMode": {
+                    "displayName": "KPI 11 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi11decimalsMonthly": {
+                    "displayName": "KPI 11 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi11decimalsSummary": {
+                    "displayName": "KPI 11 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi11noGoal": {
+                    "displayName": "KPI 11 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi11showGoal": {
+                    "displayName": "KPI 11 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi11showActual": {
+                    "displayName": "KPI 11 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi11showDelta": {
+                    "displayName": "KPI 11 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi11summaryTag": {
+                    "displayName": "KPI 11 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi11valueUnit": {
+                    "displayName": "KPI 11 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi11popupPolarity": {
+                    "displayName": "KPI 11 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi11summaryMode": {
+                    "displayName": "KPI 11 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi11disableCF": {
+                    "displayName": "KPI 11 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi11showChart": {
+                    "displayName": "KPI 11 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi12decimalsMode": {
+                    "displayName": "KPI 12 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi12decimalsMonthly": {
+                    "displayName": "KPI 12 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi12decimalsSummary": {
+                    "displayName": "KPI 12 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi12noGoal": {
+                    "displayName": "KPI 12 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi12showGoal": {
+                    "displayName": "KPI 12 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi12showActual": {
+                    "displayName": "KPI 12 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi12showDelta": {
+                    "displayName": "KPI 12 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi12summaryTag": {
+                    "displayName": "KPI 12 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi12valueUnit": {
+                    "displayName": "KPI 12 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi12popupPolarity": {
+                    "displayName": "KPI 12 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi12summaryMode": {
+                    "displayName": "KPI 12 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi12disableCF": {
+                    "displayName": "KPI 12 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi12showChart": {
+                    "displayName": "KPI 12 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi13decimalsMode": {
+                    "displayName": "KPI 13 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi13decimalsMonthly": {
+                    "displayName": "KPI 13 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi13decimalsSummary": {
+                    "displayName": "KPI 13 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi13noGoal": {
+                    "displayName": "KPI 13 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi13showGoal": {
+                    "displayName": "KPI 13 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi13showActual": {
+                    "displayName": "KPI 13 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi13showDelta": {
+                    "displayName": "KPI 13 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi13summaryTag": {
+                    "displayName": "KPI 13 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi13valueUnit": {
+                    "displayName": "KPI 13 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi13popupPolarity": {
+                    "displayName": "KPI 13 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi13summaryMode": {
+                    "displayName": "KPI 13 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi13disableCF": {
+                    "displayName": "KPI 13 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi13showChart": {
+                    "displayName": "KPI 13 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi14decimalsMode": {
+                    "displayName": "KPI 14 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi14decimalsMonthly": {
+                    "displayName": "KPI 14 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi14decimalsSummary": {
+                    "displayName": "KPI 14 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi14noGoal": {
+                    "displayName": "KPI 14 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi14showGoal": {
+                    "displayName": "KPI 14 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi14showActual": {
+                    "displayName": "KPI 14 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi14showDelta": {
+                    "displayName": "KPI 14 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi14summaryTag": {
+                    "displayName": "KPI 14 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi14valueUnit": {
+                    "displayName": "KPI 14 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi14popupPolarity": {
+                    "displayName": "KPI 14 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi14summaryMode": {
+                    "displayName": "KPI 14 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi14disableCF": {
+                    "displayName": "KPI 14 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi14showChart": {
+                    "displayName": "KPI 14 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi15decimalsMode": {
+                    "displayName": "KPI 15 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi15decimalsMonthly": {
+                    "displayName": "KPI 15 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi15decimalsSummary": {
+                    "displayName": "KPI 15 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi15noGoal": {
+                    "displayName": "KPI 15 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi15showGoal": {
+                    "displayName": "KPI 15 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi15showActual": {
+                    "displayName": "KPI 15 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi15showDelta": {
+                    "displayName": "KPI 15 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi15summaryTag": {
+                    "displayName": "KPI 15 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi15valueUnit": {
+                    "displayName": "KPI 15 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi15popupPolarity": {
+                    "displayName": "KPI 15 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi15summaryMode": {
+                    "displayName": "KPI 15 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi15disableCF": {
+                    "displayName": "KPI 15 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi15showChart": {
+                    "displayName": "KPI 15 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi16decimalsMode": {
+                    "displayName": "KPI 16 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi16decimalsMonthly": {
+                    "displayName": "KPI 16 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi16decimalsSummary": {
+                    "displayName": "KPI 16 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi16noGoal": {
+                    "displayName": "KPI 16 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi16showGoal": {
+                    "displayName": "KPI 16 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi16showActual": {
+                    "displayName": "KPI 16 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi16showDelta": {
+                    "displayName": "KPI 16 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi16summaryTag": {
+                    "displayName": "KPI 16 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi16valueUnit": {
+                    "displayName": "KPI 16 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi16popupPolarity": {
+                    "displayName": "KPI 16 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi16summaryMode": {
+                    "displayName": "KPI 16 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi16disableCF": {
+                    "displayName": "KPI 16 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi16showChart": {
+                    "displayName": "KPI 16 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi17decimalsMode": {
+                    "displayName": "KPI 17 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi17decimalsMonthly": {
+                    "displayName": "KPI 17 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi17decimalsSummary": {
+                    "displayName": "KPI 17 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi17noGoal": {
+                    "displayName": "KPI 17 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi17showGoal": {
+                    "displayName": "KPI 17 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi17showActual": {
+                    "displayName": "KPI 17 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi17showDelta": {
+                    "displayName": "KPI 17 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi17summaryTag": {
+                    "displayName": "KPI 17 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi17valueUnit": {
+                    "displayName": "KPI 17 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi17popupPolarity": {
+                    "displayName": "KPI 17 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi17summaryMode": {
+                    "displayName": "KPI 17 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi17disableCF": {
+                    "displayName": "KPI 17 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi17showChart": {
+                    "displayName": "KPI 17 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi18decimalsMode": {
+                    "displayName": "KPI 18 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi18decimalsMonthly": {
+                    "displayName": "KPI 18 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi18decimalsSummary": {
+                    "displayName": "KPI 18 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi18noGoal": {
+                    "displayName": "KPI 18 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi18showGoal": {
+                    "displayName": "KPI 18 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi18showActual": {
+                    "displayName": "KPI 18 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi18showDelta": {
+                    "displayName": "KPI 18 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi18summaryTag": {
+                    "displayName": "KPI 18 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi18valueUnit": {
+                    "displayName": "KPI 18 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi18popupPolarity": {
+                    "displayName": "KPI 18 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi18summaryMode": {
+                    "displayName": "KPI 18 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi18disableCF": {
+                    "displayName": "KPI 18 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi18showChart": {
+                    "displayName": "KPI 18 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi19decimalsMode": {
+                    "displayName": "KPI 19 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi19decimalsMonthly": {
+                    "displayName": "KPI 19 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi19decimalsSummary": {
+                    "displayName": "KPI 19 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi19noGoal": {
+                    "displayName": "KPI 19 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi19showGoal": {
+                    "displayName": "KPI 19 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi19showActual": {
+                    "displayName": "KPI 19 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi19showDelta": {
+                    "displayName": "KPI 19 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi19summaryTag": {
+                    "displayName": "KPI 19 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi19valueUnit": {
+                    "displayName": "KPI 19 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi19popupPolarity": {
+                    "displayName": "KPI 19 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi19summaryMode": {
+                    "displayName": "KPI 19 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi19disableCF": {
+                    "displayName": "KPI 19 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi19showChart": {
+                    "displayName": "KPI 19 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi20decimalsMode": {
+                    "displayName": "KPI 20 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi20decimalsMonthly": {
+                    "displayName": "KPI 20 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi20decimalsSummary": {
+                    "displayName": "KPI 20 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi20noGoal": {
+                    "displayName": "KPI 20 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi20showGoal": {
+                    "displayName": "KPI 20 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi20showActual": {
+                    "displayName": "KPI 20 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi20showDelta": {
+                    "displayName": "KPI 20 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi20summaryTag": {
+                    "displayName": "KPI 20 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi20valueUnit": {
+                    "displayName": "KPI 20 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi20popupPolarity": {
+                    "displayName": "KPI 20 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi20summaryMode": {
+                    "displayName": "KPI 20 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi20disableCF": {
+                    "displayName": "KPI 20 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi20showChart": {
+                    "displayName": "KPI 20 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi21decimalsMode": {
+                    "displayName": "KPI 21 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi21decimalsMonthly": {
+                    "displayName": "KPI 21 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi21decimalsSummary": {
+                    "displayName": "KPI 21 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi21noGoal": {
+                    "displayName": "KPI 21 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi21showGoal": {
+                    "displayName": "KPI 21 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi21showActual": {
+                    "displayName": "KPI 21 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi21showDelta": {
+                    "displayName": "KPI 21 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi21summaryTag": {
+                    "displayName": "KPI 21 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi21valueUnit": {
+                    "displayName": "KPI 21 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi21popupPolarity": {
+                    "displayName": "KPI 21 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi21summaryMode": {
+                    "displayName": "KPI 21 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi21disableCF": {
+                    "displayName": "KPI 21 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi21showChart": {
+                    "displayName": "KPI 21 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi22decimalsMode": {
+                    "displayName": "KPI 22 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi22decimalsMonthly": {
+                    "displayName": "KPI 22 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi22decimalsSummary": {
+                    "displayName": "KPI 22 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi22noGoal": {
+                    "displayName": "KPI 22 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi22showGoal": {
+                    "displayName": "KPI 22 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi22showActual": {
+                    "displayName": "KPI 22 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi22showDelta": {
+                    "displayName": "KPI 22 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi22summaryTag": {
+                    "displayName": "KPI 22 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi22valueUnit": {
+                    "displayName": "KPI 22 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi22popupPolarity": {
+                    "displayName": "KPI 22 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi22summaryMode": {
+                    "displayName": "KPI 22 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi22disableCF": {
+                    "displayName": "KPI 22 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi22showChart": {
+                    "displayName": "KPI 22 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi23decimalsMode": {
+                    "displayName": "KPI 23 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi23decimalsMonthly": {
+                    "displayName": "KPI 23 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi23decimalsSummary": {
+                    "displayName": "KPI 23 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi23noGoal": {
+                    "displayName": "KPI 23 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi23showGoal": {
+                    "displayName": "KPI 23 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi23showActual": {
+                    "displayName": "KPI 23 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi23showDelta": {
+                    "displayName": "KPI 23 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi23summaryTag": {
+                    "displayName": "KPI 23 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi23valueUnit": {
+                    "displayName": "KPI 23 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi23popupPolarity": {
+                    "displayName": "KPI 23 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi23summaryMode": {
+                    "displayName": "KPI 23 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi23disableCF": {
+                    "displayName": "KPI 23 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi23showChart": {
+                    "displayName": "KPI 23 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi24decimalsMode": {
+                    "displayName": "KPI 24 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi24decimalsMonthly": {
+                    "displayName": "KPI 24 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi24decimalsSummary": {
+                    "displayName": "KPI 24 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi24noGoal": {
+                    "displayName": "KPI 24 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi24showGoal": {
+                    "displayName": "KPI 24 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi24showActual": {
+                    "displayName": "KPI 24 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi24showDelta": {
+                    "displayName": "KPI 24 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi24summaryTag": {
+                    "displayName": "KPI 24 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi24valueUnit": {
+                    "displayName": "KPI 24 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi24popupPolarity": {
+                    "displayName": "KPI 24 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi24summaryMode": {
+                    "displayName": "KPI 24 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi24disableCF": {
+                    "displayName": "KPI 24 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi24showChart": {
+                    "displayName": "KPI 24 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi25decimalsMode": {
+                    "displayName": "KPI 25 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi25decimalsMonthly": {
+                    "displayName": "KPI 25 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi25decimalsSummary": {
+                    "displayName": "KPI 25 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi25noGoal": {
+                    "displayName": "KPI 25 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi25showGoal": {
+                    "displayName": "KPI 25 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi25showActual": {
+                    "displayName": "KPI 25 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi25showDelta": {
+                    "displayName": "KPI 25 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi25summaryTag": {
+                    "displayName": "KPI 25 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi25valueUnit": {
+                    "displayName": "KPI 25 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi25popupPolarity": {
+                    "displayName": "KPI 25 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi25summaryMode": {
+                    "displayName": "KPI 25 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi25disableCF": {
+                    "displayName": "KPI 25 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi25showChart": {
+                    "displayName": "KPI 25 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi26decimalsMode": {
+                    "displayName": "KPI 26 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi26decimalsMonthly": {
+                    "displayName": "KPI 26 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi26decimalsSummary": {
+                    "displayName": "KPI 26 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi26noGoal": {
+                    "displayName": "KPI 26 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi26showGoal": {
+                    "displayName": "KPI 26 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi26showActual": {
+                    "displayName": "KPI 26 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi26showDelta": {
+                    "displayName": "KPI 26 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi26summaryTag": {
+                    "displayName": "KPI 26 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi26valueUnit": {
+                    "displayName": "KPI 26 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi26popupPolarity": {
+                    "displayName": "KPI 26 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi26summaryMode": {
+                    "displayName": "KPI 26 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi26disableCF": {
+                    "displayName": "KPI 26 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi26showChart": {
+                    "displayName": "KPI 26 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi27decimalsMode": {
+                    "displayName": "KPI 27 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi27decimalsMonthly": {
+                    "displayName": "KPI 27 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi27decimalsSummary": {
+                    "displayName": "KPI 27 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi27noGoal": {
+                    "displayName": "KPI 27 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi27showGoal": {
+                    "displayName": "KPI 27 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi27showActual": {
+                    "displayName": "KPI 27 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi27showDelta": {
+                    "displayName": "KPI 27 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi27summaryTag": {
+                    "displayName": "KPI 27 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi27valueUnit": {
+                    "displayName": "KPI 27 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi27popupPolarity": {
+                    "displayName": "KPI 27 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi27summaryMode": {
+                    "displayName": "KPI 27 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi27disableCF": {
+                    "displayName": "KPI 27 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi27showChart": {
+                    "displayName": "KPI 27 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi28decimalsMode": {
+                    "displayName": "KPI 28 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi28decimalsMonthly": {
+                    "displayName": "KPI 28 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi28decimalsSummary": {
+                    "displayName": "KPI 28 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi28noGoal": {
+                    "displayName": "KPI 28 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi28showGoal": {
+                    "displayName": "KPI 28 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi28showActual": {
+                    "displayName": "KPI 28 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi28showDelta": {
+                    "displayName": "KPI 28 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi28summaryTag": {
+                    "displayName": "KPI 28 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi28valueUnit": {
+                    "displayName": "KPI 28 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi28popupPolarity": {
+                    "displayName": "KPI 28 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi28summaryMode": {
+                    "displayName": "KPI 28 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi28disableCF": {
+                    "displayName": "KPI 28 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi28showChart": {
+                    "displayName": "KPI 28 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi29decimalsMode": {
+                    "displayName": "KPI 29 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi29decimalsMonthly": {
+                    "displayName": "KPI 29 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi29decimalsSummary": {
+                    "displayName": "KPI 29 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi29noGoal": {
+                    "displayName": "KPI 29 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi29showGoal": {
+                    "displayName": "KPI 29 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi29showActual": {
+                    "displayName": "KPI 29 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi29showDelta": {
+                    "displayName": "KPI 29 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi29summaryTag": {
+                    "displayName": "KPI 29 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi29valueUnit": {
+                    "displayName": "KPI 29 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi29popupPolarity": {
+                    "displayName": "KPI 29 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi29summaryMode": {
+                    "displayName": "KPI 29 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi29disableCF": {
+                    "displayName": "KPI 29 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi29showChart": {
+                    "displayName": "KPI 29 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi30decimalsMode": {
+                    "displayName": "KPI 30 — decimals mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "auto",
+                                "displayName": "Auto"
+                            },
+                            {
+                                "value": "standard",
+                                "displayName": "Standard (M:2 / K:1 / whole:0)"
+                            },
+                            {
+                                "value": "custom",
+                                "displayName": "Custom"
+                            }
+                        ]
+                    }
+                },
+                "kpi30decimalsMonthly": {
+                    "displayName": "KPI 30 — custom decimals (monthly)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi30decimalsSummary": {
+                    "displayName": "KPI 30 — summary decimals",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpi30noGoal": {
+                    "displayName": "KPI 30 — no goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi30showGoal": {
+                    "displayName": "KPI 30 — show goal",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi30showActual": {
+                    "displayName": "KPI 30 — show actual value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi30showDelta": {
+                    "displayName": "KPI 30 — show delta",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi30summaryTag": {
+                    "displayName": "KPI 30 — summary tag",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "kpi30valueUnit": {
+                    "displayName": "KPI 30 — value unit",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "none",
+                                "displayName": "(blank)"
+                            },
+                            {
+                                "value": "dollar",
+                                "displayName": "$"
+                            },
+                            {
+                                "value": "percent",
+                                "displayName": "%"
+                            }
+                        ]
+                    }
+                },
+                "kpi30popupPolarity": {
+                    "displayName": "KPI 30 — popup polarity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "cf",
+                                "displayName": "Use CF colour (default)"
+                            },
+                            {
+                                "value": "moreIsMore",
+                                "displayName": "More is More"
+                            },
+                            {
+                                "value": "lessIsMore",
+                                "displayName": "Less is More"
+                            }
+                        ]
+                    }
+                },
+                "kpi30summaryMode": {
+                    "displayName": "KPI 30 — summary mode",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "custom",
+                                "displayName": "Custom (Wells 5-7)"
+                            },
+                            {
+                                "value": "priorMonth",
+                                "displayName": "Prior Month (snapshot)"
+                            },
+                            {
+                                "value": "sumYtd",
+                                "displayName": "Sum YTD"
+                            },
+                            {
+                                "value": "avgYtd",
+                                "displayName": "Average YTD"
+                            }
+                        ]
+                    }
+                },
+                "kpi30disableCF": {
+                    "displayName": "KPI 30 — disable conditional formatting",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpi30showChart": {
+                    "displayName": "KPI 30 — show trend chart",
+                    "type": {
+                        "bool": true
+                    }
+                }
+            }
+        },
+        "sectionHeaders": {
+            "displayName": "Section headers",
+            "properties": {
+                "sectionFontSize": {
+                    "displayName": "Section font size (global)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "sectionFontFamily": {
+                    "displayName": "Section font family (global)",
+                    "type": {
+                        "formatting": {
+                            "fontFamily": true
+                        }
+                    }
+                },
+                "sectionBold": {
+                    "displayName": "Section bold (global)",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "sectionPaddingV": {
+                    "displayName": "Section row padding (top/bottom, px)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "s1pos": {
+                    "displayName": "Section 1 — row position",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "s1label": {
+                    "displayName": "Section 1 — label",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "s1color": {
+                    "displayName": "Section 1 — color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "s1bgColor": {
+                    "displayName": "Section 1 — background color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "s2pos": {
+                    "displayName": "Section 2 — row position",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "s2label": {
+                    "displayName": "Section 2 — label",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "s2color": {
+                    "displayName": "Section 2 — color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "s2bgColor": {
+                    "displayName": "Section 2 — background color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "s3pos": {
+                    "displayName": "Section 3 — row position",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "s3label": {
+                    "displayName": "Section 3 — label",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "s3color": {
+                    "displayName": "Section 3 — color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "s3bgColor": {
+                    "displayName": "Section 3 — background color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "s4pos": {
+                    "displayName": "Section 4 — row position",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "s4label": {
+                    "displayName": "Section 4 — label",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "s4color": {
+                    "displayName": "Section 4 — color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "s4bgColor": {
+                    "displayName": "Section 4 — background color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "s5pos": {
+                    "displayName": "Section 5 — row position",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "s5label": {
+                    "displayName": "Section 5 — label",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "s5color": {
+                    "displayName": "Section 5 — color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "s5bgColor": {
+                    "displayName": "Section 5 — background color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "s6pos": {
+                    "displayName": "Section 6 — row position",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "s6label": {
+                    "displayName": "Section 6 — label",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "s6color": {
+                    "displayName": "Section 6 — color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "s6bgColor": {
+                    "displayName": "Section 6 — background color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "s7pos": {
+                    "displayName": "Section 7 — row position",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "s7label": {
+                    "displayName": "Section 7 — label",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "s7color": {
+                    "displayName": "Section 7 — color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "s7bgColor": {
+                    "displayName": "Section 7 — background color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "s8pos": {
+                    "displayName": "Section 8 — row position",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "s8label": {
+                    "displayName": "Section 8 — label",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "s8color": {
+                    "displayName": "Section 8 — color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "s8bgColor": {
+                    "displayName": "Section 8 — background color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "s9pos": {
+                    "displayName": "Section 9 — row position",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "s9label": {
+                    "displayName": "Section 9 — label",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "s9color": {
+                    "displayName": "Section 9 — color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "s9bgColor": {
+                    "displayName": "Section 9 — background color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "s10pos": {
+                    "displayName": "Section 10 — row position",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "s10label": {
+                    "displayName": "Section 10 — label",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "s10color": {
+                    "displayName": "Section 10 — color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "s10bgColor": {
+                    "displayName": "Section 10 — background color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "s11pos": {
+                    "displayName": "Section 11 — row position",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "s11label": {
+                    "displayName": "Section 11 — label",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "s11color": {
+                    "displayName": "Section 11 — color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "s11bgColor": {
+                    "displayName": "Section 11 — background color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "s12pos": {
+                    "displayName": "Section 12 — row position",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "s12label": {
+                    "displayName": "Section 12 — label",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "s12color": {
+                    "displayName": "Section 12 — color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "s12bgColor": {
+                    "displayName": "Section 12 — background color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "chartStyle": {
+            "displayName": "Trend chart",
+            "properties": {
+                "showTrendChart": {
+                    "displayName": "Show trend chart column",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "chartColumnWidth": {
+                    "displayName": "Trend chart column width",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "showGoalLine": {
+                    "displayName": "Show goal line",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "positiveLineColor": {
+                    "displayName": "Positive line colour",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "negativeLineColor": {
+                    "displayName": "Negative line colour",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "actualLineThickness": {
+                    "displayName": "Actual line thickness",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "actualLineSmooth": {
+                    "displayName": "Smooth line",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "goalLineColor": {
+                    "displayName": "Goal line colour",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "goalLineThickness": {
+                    "displayName": "Goal line thickness",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "goalLineStyle": {
+                    "displayName": "Goal line style",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "dashed",
+                                "displayName": "Dashed"
+                            },
+                            {
+                                "value": "dotted",
+                                "displayName": "Dotted"
+                            },
+                            {
+                                "value": "solid",
+                                "displayName": "Solid"
+                            }
+                        ]
+                    }
+                },
+                "showDataPoints": {
+                    "displayName": "Show data points",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "dataPointSize": {
+                    "displayName": "Data point size",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "fillArea": {
+                    "displayName": "Fill area",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "showReportedMonthsOnly": {
+                    "displayName": "Show reported months only",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "monthLetterFontSize": {
+                    "displayName": "Month letter font size (chart)",
+                    "type": {
+                        "numeric": true
+                    }
+                }
+            }
+        },
+        "gridLines": {
+            "displayName": "Grid lines",
+            "properties": {
+                "showRowGridlines": {
+                    "displayName": "Show row gridlines",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "rowGridlineColor": {
+                    "displayName": "Row gridline color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "rowGridlineThickness": {
+                    "displayName": "Row gridline thickness",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "showColGridlines": {
+                    "displayName": "Show column gridlines",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "colGridlineColor": {
+                    "displayName": "Column gridline color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "colGridlineThickness": {
+                    "displayName": "Column gridline thickness",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "showKpiRowDivider": {
+                    "displayName": "Show bold KPI row divider",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "kpiRowDividerThickness": {
+                    "displayName": "KPI row divider thickness",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "kpiRowDividerColor": {
+                    "displayName": "KPI row divider color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "conditionalFormatting": {
+            "displayName": "Conditional formatting",
+            "properties": {
+                "positiveColor": {
+                    "displayName": "Positive color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "negativeColor": {
+                    "displayName": "Negative color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "positiveFontColor": {
+                    "displayName": "Positive font color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "negativeFontColor": {
+                    "displayName": "Negative font color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "allowJs": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "target": "ES6",
+        "sourceMap": true,
+        "outDir": "./.tmp/build/",
+        "moduleResolution": "bundler",
+        "declaration": true,
+        "lib": [
+            "es2015",
+            "dom"
+        ],
+        "strict": false,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "module": "ESNext"
+    },
+    "files": [
+        "./src/visual.ts",
+        "./src/less.d.ts"
+    ]
+}
