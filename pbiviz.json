@@ -4,9 +4,9 @@
         "displayName": "KPI Matrix Grid by Baztec",
         "guid": "kpiMatrixGridVisual2026AABB",
         "visualClassName": "KPIMatrixGridVisual",
-        "version": "1.29.16.0",
-        "description": "Flat KPI matrix grid with per-KPI conditional formatting, summary column with goal/delta, and hover delta popups. Formatting Model migration complete (all 13 objects). v1.29.16.0: real author email set (Phase 3 placeholder resolved).",
-        "supportUrl": "https://example.com",
+        "version": "1.29.17.0",
+        "description": "Flat KPI matrix grid with per-KPI conditional formatting, summary column with goal/delta, and hover delta popups. Formatting Model migration complete (all 13 objects). v1.29.17.0: real support URL set (Phase 3 fully resolved - both placeholders now real values).",
+        "supportUrl": "https://bazallarrr.github.io/PBI_kpi-matrix-grid_chart/",
         "gitHubUrl": ""
     },
     "apiVersion": "5.11.0",
